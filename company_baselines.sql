@@ -52,7 +52,7 @@ WITH last_date AS (
 
 SELECT ROUND(AVG(CASE WHEN termination_date IS NOT NULL THEN (termination_date - hire_date)ELSE (last_date - hire_date)
         END) / 365.25, 1) AS avg_tenure_years
-        FROM driversCROSS JOIN last_date
+        FROM drivers CROSS JOIN last_date
 ;
 
 --6 Revenue by load type (load_type)
